@@ -16,10 +16,12 @@ To install **Hurakken** in your project, navigate to your project folder in your
 
 To start using **Hurakken**, you will first need to apply the middleware to your store, just like any redux middleware :
 
+```javascript
     ...
     import hurakken from "redux-hurakken";
     ...
     export default createStore(rootReducer,applyMiddleware([hurakken]));
+```
 
 > Note that a light version of `Hurakken` is already included in [Axiom](https://github.com/vbuzzegoli/axiom).
 
@@ -27,6 +29,7 @@ To start using **Hurakken**, you will first need to apply the middleware to your
 
 > Using ES6+ syntax
 
+```javascript
     import * as actions from "../constants/action-types";
 
     export const clearArray = () => {
@@ -36,6 +39,7 @@ To start using **Hurakken**, you will first need to apply the middleware to your
             throttle: 5000
         }
     }
+```
 
 > `throttle` is a value in **milliseconds** for which this action will not be dispatchable again. Note that due to Javascript single threaded environment, this value can be subject to slight variant, and is therefore not precisely defined.
 
@@ -49,13 +53,16 @@ To start using **Hurakken**, you will first need to apply the middleware to your
 
 In `/reactions` :
 
-    export const customReaction = (action, next) => {
-        console.log("Rejected Action :", action);
-        next(action);
-    };
+```javascript
+export const customReaction = (action, next) => {
+    console.log("Rejected Action :", action);
+    next(action);
+};
+```
 
 In `/actions` :
 
+```javascript
     import * as actions from "../constants/action-types";
     import { customReaction } from "../reactions/customReaction";
 
@@ -67,6 +74,7 @@ In `/actions` :
             onRejected: customReaction
         }
     }
+```
 
 > If you were to use a non 4M compliant middleware such as _redux-thunk_, which is **deprecated by the [4M documentation](https://github.com/vbuzzegoli/4m)**, please note that, by default, using/dispatching the action returned by `onAccepted` or `onRejected` will not trigger _Hurakken_ again even though the arguments are still contained in the action's parameters. To force triggering _Hurakken_ again, use : `_skip: false` or remove `_skip` in the `hurakken` node.
 
@@ -74,6 +82,7 @@ In `/actions` :
 
 Here is a overview of every options possible:
 
+```javascript
     hurakken: {
         throttle: 3000,
         log: true,
@@ -85,10 +94,11 @@ Here is a overview of every options possible:
             //...
         }
     }
+```
 
 ## Version
 
-1.2.0
+1.2.1
 
 ## License
 
