@@ -2,9 +2,9 @@
 
 Advanced throttling module as a Redux Middleware, by [Victor Buzzegoli](https://twitter.com/victorbuzzegoli)
 
-Lightweight, Powerfull, _MMMM_ compliant (check out : [Modern Modular Middleware Model](https://twitter.com/victorbuzzegoli))
+Lightweight, Powerfull, _MMMM_ compliant (check out : [Modern Modular Middleware Model](https://github.com/vbuzzegoli/4m))
 
-Often used along with [Axiom](https://www.npmjs.com/package/redux-axiom)
+Often used along with [Axiom](https://github.com/vbuzzegoli/axiom)
 
 ## Installation
 
@@ -21,7 +21,7 @@ To start using **Hurakken**, you will first need to apply the middleware to your
     ...
     export default createStore(rootReducer,applyMiddleware([hurakken]));
 
-> Note that `Hurakken` is already included in [Axiom](https://www.npmjs.com/package/redux-axiom).
+> Note that a light version of `Hurakken` is already included in [Axiom](https://github.com/vbuzzegoli/axiom).
 
 ## Usage
 
@@ -39,13 +39,13 @@ To start using **Hurakken**, you will first need to apply the middleware to your
 
 > `throttle` is a value in **milliseconds** for which this action will not be dispatchable again. Note that due to Javascript single threaded environment, this value can be subject to slight variant, and is therefore not precisely defined.
 
--   _Throttling_ can be espacially useful to prevent from overloading a network by rejecting spam attempts. For that reason, **Hurakken** is included natively into our REST Middleware [Axiom](https://www.npmjs.com/package/redux-axiom).
+-   _Throttling_ can be espacially useful to prevent from overloading a network by rejecting spam attempts. For that reason, **Hurakken** is included natively into our REST Middleware [Axiom](https://github.com/vbuzzegoli/axiom).
 
-##### Behaviour
+#### Behaviour
 
 -   Use `onAccepted` and `onRejected` to override the default behaviour
 
-> Note that these functions are called **reactions**, accordingly to the [Modern Modular Middleware Model](https://twitter.com/victorbuzzegoli). Therefore they contain a `next` argument that can be use to release an action to the reducer (or next middleware). They can be used like :
+> Note that these functions are called **reactions**, accordingly to the [Modern Modular Middleware Model](https://github.com/vbuzzegoli/4m). Therefore they contain a `next` argument that can be use to release an action to the reducer (or next middleware). They can be used like :
 
 In `/reactions` :
 
@@ -68,7 +68,7 @@ In `/actions` :
         }
     }
 
-> If you were to use a non 4M compliant middleware such as _redux-thunk_, which is **deprecated by the [4M documentation](https://twitter.com/victorbuzzegoli)**, please note that, by default, using/dispatching the action returned by `onAccepted` or `onRejected` will not trigger _Hurakken_ again even though the arguments are still contained in the action's parameters. To force triggering _Hurakken_ again, use : `_skip: false` or remove `_skip` in the `hurakken` node.
+> If you were to use a non 4M compliant middleware such as _redux-thunk_, which is **deprecated by the [4M documentation](https://github.com/vbuzzegoli/4m)**, please note that, by default, using/dispatching the action returned by `onAccepted` or `onRejected` will not trigger _Hurakken_ again even though the arguments are still contained in the action's parameters. To force triggering _Hurakken_ again, use : `_skip: false` or remove `_skip` in the `hurakken` node.
 
 -   Use `log: true` to print the middleware logs in the console (add `xlog: true` for extended logs)
 
