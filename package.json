@@ -1,0 +1,30 @@
+{
+  "name": "redux-hurakken",
+  "version": "1.2.0",
+  "description": "Throttling as a Redux Middleware (4M compliant)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vbuzzegoli/hurakken.git"
+  },
+  "keywords": [
+    "throttle",
+    "throttling",
+    "hurakken",
+    "redux",
+    "middleware",
+    "4M",
+    "modern",
+    "modular",
+    "model"
+  ],
+  "author": "Victor Buzzegoli",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vbuzzegoli/hurakken/issues"
+  },
+  "homepage": "https://github.com/vbuzzegoli/hurakken#readme"
+}
