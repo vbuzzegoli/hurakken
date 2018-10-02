@@ -1,6 +1,6 @@
 {
   "name": "redux-hurakken",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Throttling as a Redux Middleware (4M compliant)",
   "main": "index.js",
   "scripts": {
