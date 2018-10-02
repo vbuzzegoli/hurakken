@@ -54,7 +54,7 @@ To start using **Hurakken**, you will first need to apply the middleware to your
 In `/reactions` :
 
 ```javascript
-export const customReaction = (action, next) => {
+export const customReaction = (action, next, dispatch) => {
     console.log("Rejected Action :", action);
     next(action);
 };
@@ -87,10 +87,10 @@ Here is a overview of every options possible:
         throttle: 3000,
         log: true,
         xlog: true,
-        onSuccess: (action, next) => {
+        onSuccess: (action, next, dispatch) => {
             //...
         },
-        onRejected: (action, next) => {
+        onRejected: (action, next, dispatch) => {
             //...
         }
     }
@@ -98,7 +98,7 @@ Here is a overview of every options possible:
 
 ## Version
 
-1.2.1
+1.3.0
 
 ## License
 

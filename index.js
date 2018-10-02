@@ -29,7 +29,7 @@ const hurakken = store => next => action => {
           if (xlog) console.log(`[Hurakken done for: ${action.type}]`, action);
         }
         if (onRejected) {
-          onRejected(newAction, next);
+          onRejected(newAction, next, store.dispatch);
         }
         return;
       } else {
@@ -42,7 +42,7 @@ const hurakken = store => next => action => {
           if (xlog) console.log(`[Hurakken done for: ${action.type}]`, action);
         }
         if (onAccepted) {
-          onAccepted(newAction, next);
+          onAccepted(newAction, next, store.dispatch);
         } else {
           return next(newAction);
         }
