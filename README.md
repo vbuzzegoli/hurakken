@@ -2,7 +2,7 @@
 
 Advanced throttling module as a Redux Middleware, by [Victor Buzzegoli](https://twitter.com/victorbuzzegoli)
 
-Lightweight, Powerfull, _MMMM_ compliant (check out : [Modern Modular Middleware Model](https://github.com/vbuzzegoli/4m))
+Lightweight, Powerfull, _4M_ 1.6 compliant (check out : [Modern Modular Middleware Model](https://github.com/vbuzzegoli/4m))
 
 Often used along with [Axiom](https://github.com/vbuzzegoli/axiom)
 
@@ -98,7 +98,7 @@ Here is a overview of every options possible:
 
 ## Version
 
-1.3.0
+1.3.1
 
 ## License
 
